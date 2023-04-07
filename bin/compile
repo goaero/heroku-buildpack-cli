@@ -107,7 +107,7 @@ for BUILDPACK_RUN_CMD in ${BUILDPACK_RUN_COMMANDS[@]}; do
   }
 done
 
-$BUILD_DIR/.heroku/bin/heroku config -s -a $HEROKU_APP_NAME > $BUILD_DIR/bin/envvars
+$BUILD_DIR/.heroku/bin/heroku config -s -a $HEROKU_APP_NAME > $BUILD_DIR/envvars
 
 # other script
 
@@ -127,8 +127,8 @@ indent() {
 
 
 
-echo 'Running `bin/envvars` inside the buildpack environment' | indent
-source $BUILD_DIR/bin/envvars
+echo 'Running `envvars` inside the buildpack environment' | indent
+source $BUILD_DIR/envvars
 
 # give environment to later buildpacks
 touch "$BP_DIR/export"
