@@ -105,3 +105,5 @@ for BUILDPACK_RUN_CMD in ${BUILDPACK_RUN_COMMANDS[@]}; do
     exit 1
   }
 done
+
+$BUILD_DIR/.heroku/bin/heroku config -s -a $HEROKU_APP_NAME > $CACHE_DIR/envvars
